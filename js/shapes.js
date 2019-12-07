@@ -25,22 +25,22 @@ window.onload = function() {
  * Exercise 1.
  */
 
+const ctx = getContext("2d");
+
 const sayHello = function() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
   const canvas = const canvas = document.getElementById('student-canvas-1');
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
   let input;
-  const context = canvas.getContext('2d')
 
   do {
-    input = window.prompt("");
+    input = window.prompt("Message:");
     if (input.length > 50) {
       alert("Your message is too long. Keep it under 50 characters")
     }
   } while (input.length > 50);
 
-  let text = document.getElementById('student-canvas-1');
-  text.font = '48px serif';
-  text.strokeText('Hello world', 10, 50);
+  ctx.font = "48px sans-serif";
+  ctx.strokeText(message, 30, 70, 994);
 };
 
 /*
