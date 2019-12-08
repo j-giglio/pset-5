@@ -48,7 +48,41 @@ const sayHello = function() {
  */
 
 const drawRectangle = function() {
-    // write your exercise 2 code here
+  const canvas = const canvas = document.getElementById('student-canvas-2');
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  let x;
+  let y;
+  let height;
+  let width;
+ 
+  do {
+    x = prompt("Message:");
+    if (x.length > 50) {
+      alert("Your message is too long. Keep it under 50 characters")
+    }
+  } while (x.length > 50);
+  do {
+    y = prompt("Message:");
+    if (y.length > 50) {
+      alert("Your message is too long. Keep it under 50 characters")
+    }
+  } while (y.length > 50);
+  do {
+    width = prompt("Message:");
+    if (width.length > 50) {
+      alert("Your message is too long. Keep it under 50 characters")
+    }
+  } while (width.length > 50);
+  do {
+    height = prompt("Message:");
+    if (height.length > 50) {
+      alert("Your message is too long. Keep it under 50 characters")
+    }
+  } while (height.length > 50);
+
+  ctx.strokeRect(x, y, width, height);
+  
+  
 };
 
 /*
@@ -56,8 +90,18 @@ const drawRectangle = function() {
  */
 
 const drawColoredRectangle = function() {
-    // write your exercise 3 code here
-};
+  const canvas = const canvas = document.getElementById('student-canvas-2');
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+  do {
+    height = window.prompt("Message:");
+    if (height.length > 50) {
+      alert("Your message is too long. Keep it under 50 characters")
+    }
+  } while (height.length > 50);
+    
+  ctx.fillStyle = color;
+  ctx.strokeRect(10, 10, 100, 50);};
 
 /*
  * Exercise 4.
