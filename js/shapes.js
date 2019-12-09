@@ -28,7 +28,7 @@ window.onload = function() {
 const ctx = getContext("2d");
 
 const sayHello = function() {
-  const canvas = const canvas = document.getElementById('student-canvas-1');
+  const canvas = document.getElementById('student-canvas-1');
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   let input;
 
@@ -48,7 +48,7 @@ const sayHello = function() {
  */
 
 const drawRectangle = function() {
-  const canvas = const canvas = document.getElementById('student-canvas-2');
+  const canvas = document.getElementById('student-canvas-2');
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   let x;
   let y;
@@ -93,7 +93,7 @@ const drawRectangle = function() {
  */
 
 const drawColoredRectangle = function() {
-  const canvas = const canvas = document.getElementById('student-canvas-3');
+  const canvas = document.getElementById('student-canvas-3');
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   let color;
     
@@ -187,19 +187,44 @@ const drawFace = function() {
     
   do {
     headRadius = prompt("Radius: ")
-    if (headRadius > canvas.width / 2) {
+    if (headRadius > canvas.height / 4) {
       alert("Your smiley face won't fit on the canvas."
       valid = false
-    }
-    if (headRadius < 32) {
+    } else if (headRadius < 32) {
       alert("Your radius must be at least 32.")
       valid = false
-    }
-    if (isNaN(headRadius)) {
+    } else if (isNaN(headRadius)) {
       alert("Your radius is not a number.")
       valid = false
     }
   } while (valid = false)
+      
+  eyeRadius = headRadius * 0.15;
+  mouthRadius = headRadius * 0.7;
+  let centerPointX = canvas.width / 2
+  let centerPointY = canvas.height / 2
+      
+  ctx.beginPath
+  ctx.arc(centerPointX, centerPointY, headRadius, 0, 2 * Math.PI);
+  ctx.stroke();
+  ctx.closePath();
+  ctx.beginPath
+  ctx.arc(centerPointX, centerPointY, mouthRadius, 0, Math.PI);
+  ctx.stroke();
+  ctx.closePath();
+  let eyeCenterPointX += headRadius * 0.4;
+  let eyeCenterPointY += headRadius * 0.4;
+  ctx.beginPath
+  ctx.arc(eyeCenterPointX, eyeCenterPointY, eyeRadius, 0, Math.PI);
+  ctx.stroke();
+  ctx.closePath();
+  let eyeCenterPointX += headRadius * 0.4;
+  let eyeCenterPointY += headRadius * 0.4;
+  ctx.beginPath
+  ctx.arc(eyeCenterPointX, eyeCenterPointY, eyeRadius, 0, Math.PI);
+  ctx.stroke();
+  ctx.closePath();
+  
 };
 
 /*
