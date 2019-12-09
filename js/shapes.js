@@ -33,7 +33,7 @@ const sayHello = function() {
   let input;
 
   do {
-    input = prompt("Message:");
+    input = (prompt("Message:"));
     if (input.length > 50) {
       alert("Your message is too long. Keep it under 50 characters")
     }
