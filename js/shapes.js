@@ -33,7 +33,7 @@ const sayHello = function() {
   let input;
 
   do {
-    input = window.prompt("Message:");
+    input = prompt("Message:");
     if (input.length > 50) {
       alert("Your message is too long. Keep it under 50 characters")
     }
@@ -56,29 +56,32 @@ const drawRectangle = function() {
   let width;
  
   do {
-    x = prompt("Message:");
-    if (x.length > 50) {
-      alert("Your message is too long. Keep it under 50 characters")
-    }
-  } while (x.length > 50);
-  do {
-    y = prompt("Message:");
-    if (y.length > 50) {
-      alert("Your message is too long. Keep it under 50 characters")
-    }
-  } while (y.length > 50);
-  do {
-    width = prompt("Message:");
+    width = prompt("Width:");
     if (width.length > 50) {
-      alert("Your message is too long. Keep it under 50 characters")
+      alert("Your width must be between 1 and 1024.")
     }
-  } while (width.length > 50);
+  } while (width > 1024 || width < 1);
+  
   do {
-    height = prompt("Message:");
+    height = prompt("Height:");
     if (height.length > 50) {
-      alert("Your message is too long. Keep it under 50 characters")
+      alert("Your height must be between 1 and 1024.")
     }
-  } while (height.length > 50);
+  } while (height > 1024 || height < 1);
+  
+  do {
+    x = prompt("X:");
+    if (x.length > 50) {
+      alert("Your x-coordinate must be between 1 and 1024.")
+    }
+  } while (x > 1024 || x < 1);
+  
+  do {
+    y = prompt("Y:");
+    if (y.length > 50) {
+      alert("Your y-coordinate must be between 1 and 1024.")
+    }
+  } while (y > 1024 || y < 1);
 
   ctx.strokeRect(x, y, width, height);
   
@@ -90,33 +93,113 @@ const drawRectangle = function() {
  */
 
 const drawColoredRectangle = function() {
-  const canvas = const canvas = document.getElementById('student-canvas-2');
+  const canvas = const canvas = document.getElementById('student-canvas-3');
   ctx.clearRect(0, 0, canvas.width, canvas.height);
+  let color;
     
   do {
-    height = window.prompt("Message:");
-    if (height.length > 50) {
-      alert("Your message is too long. Keep it under 50 characters")
+    color = window.prompt("Color:");
+    color = color.toUpperCase;
+    if (color "GREEN" && color != "BLACK" && color != "BLUE" && color != "ORANGE" && color != "PURPLE" && color != "RED" && color != "YELLOW")
+);
+    {
+      alert(color + " is not a supported color.")
     }
   } while (height.length > 50);
     
   ctx.fillStyle = color;
-  ctx.strokeRect(10, 10, 100, 50);};
+  ctx.strokeRect(10, 10, 100, 50);
+};
 
 /*
  * Exercise 4.
  */
 
 const drawTriangle = function() {
-    // write your exercise 4 code here
-};
+  const canvas = document.getElementById('student-canvas-4');
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  let height;
+  let hypotenuse;
+  let base;
+  let firstSide;
+  let secondSide;
+  let thirdSide;
+  let valid = true;
+
+  do {
+    firstSide = Number(prompt("Side 1: "))
+    secondSide = Number(prompt("Side 2: "))
+    thirdSide = Number(prompt("Side 3: "))
+    
+    if (isNaN(firstSide) || isNaN(secondSide) || isNaN(thirdSide)) {
+      alert("One of your sides is not a number.")
+      valid = false;
+    }
+    if (firstSide > 1024 || secondSide > 1024 || thirdSide > 1024) {
+      alert("Your triangle won't fit on the canvas.")
+      valid = false;
+    }
+    if (firstSide < 1 || secondSide < 1 || thirdSide < 1) {
+      alert("SEE WHAT THIS SHOULD SAY")
+      valid = false;
+    }
+    
+    height = Math.min (firstSide, secondSide, thirdSide)
+    
+    if (Math.min (firstSide, secondSide, thirdSide) = firstSide) {
+      firstSide = 0
+    } else if (Math.min (firstSide, secondSide, thirdSide) = secondSide) {
+      secondSide = 0
+    } else if (Math.min (firstSide, secondSide, thirdSide) = thirdSide) {
+      thirdSide = 0
+    }
+    
+    base = Math.min (firstSide, secondSide, thirdSide);
+    hypotenuse = Math.max(firstSide, secondSide, thirdSide);
+      
+    if (height**2 + base**2 != hypotenuse**2) {
+      alert("That's not a valid right triangle.")
+      valid = false;
+    }
+  }  while (valid = false;)
+
+  height += 25;
+  base += 25;
+      
+  ctx.beginPath();
+  ctx.moveTo(25, 25);
+  ctx.lineTo(25, height);
+  ctx.lineTo(base, height)
+  ctx.lineTo(25, 25)
+  ctx.stroke();
 
 /*
  * Exercise 5.
  */
 
 const drawFace = function() {
-    // write your exercise 4 code here
+  const canvas = document.getElementById('student-canvas-5');
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  let headRadius;
+  let eyeRadius;
+  let mouthRadius;
+  let valid = true;
+    
+  do {
+    headRadius = prompt("Radius: ")
+    if (headRadius > canvas.width / 2) {
+      alert("Your smiley face won't fit on the canvas."
+      valid = false
+    }
+    if (headRadius < 32) {
+      alert("Your radius must be at least 32.")
+      valid = false
+    }
+    if (isNaN(headRadius)) {
+      alert("Your radius is not a number.")
+      valid = false
+    }
+  } while (valid = false)
 };
 
 /*
