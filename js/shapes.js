@@ -75,37 +75,32 @@ const drawRectangle = function() {
       width = Number(prompt("Width:"));
       if (width == null) {
         return;
-      } else if (width > 1024 || width < 1) {
-        alert("Your width must be between 1 and 1024.")
-        valid = false;
       }
-    } while (valid == false);
-
-    do {
       height = Number(prompt("Height:"));
       if (height == null) {
         return;
-      } else if (height > 512 || height < 1) {
-        alert("Your height must be between 1 and 512.")
-        valid = false;
       }
-    } while (valid == false);
-
-    do {
       x = Number(prompt("X:"));
       if (x == null) {
         return;
-      } else if (x > 1024 || x < 1) {
-        alert("Your x-coordinate must be between 1 and 1024.")
-        valid = false;
       }
-    } while (valid == false);
-
-    do {
       y = Number(prompt("Y:"));
       if (y == null) {
         return;
-      } else if (y > 512 || y < 1) {
+      }
+      if (width > 1024 || width < 1) {
+        alert("Your width must be between 1 and 1024.")
+        valid = false;
+      }
+      if (height > 512 || height < 1) {
+        alert("Your height must be between 1 and 512.")
+        valid = false;
+      }
+      if (x > 1024 || x < 1) {
+        alert("Your x-coordinate must be between 1 and 1024.")
+        valid = false;
+      }
+      if (y > 512 || y < 1) {
         alert("Your y-coordinate must be between 1 and 512.")
         valid = false;
       }
@@ -272,19 +267,19 @@ const drawFace = function() {
   ctx.stroke();
   ctx.closePath();
 
-  centerPointX += headRadius * 0.4;
-  centerPointY += headRadius * 0.4;
+  let eyeCenterPointX = centerPointX + headRadius * 0.4;
+  let eyeCenterPointY = centerPointY + headRadius * 0.4;
 
   ctx.beginPath
-  ctx.arc(centerPointX, centerPointY, eyeRadius, 0, 2 * Math.PI);
+  ctx.arc(eyeCenterPointX, eyeCenterPointY, eyeRadius, 0, 2 * Math.PI);
   ctx.stroke();
   ctx.closePath();
 
-  centerPointX += headRadius * 0.4;
-  centerPointY += headRadius * 0.4;
+  eyeCenterPointX = centerPointX - headRadius * 0.4;
+  eyeCenterPointY = centerPointY - headRadius * 0.4;
 
   ctx.beginPath
-  ctx.arc(centerPointX, centerPointY, eyeRadius, 0, 2 * Math.PI);
+  ctx.arc(eyeCenterPointX, eyeCenterPointY, eyeRadius, 0, 2 * Math.PI);
   ctx.stroke();
   ctx.closePath();
 
