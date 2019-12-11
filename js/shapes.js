@@ -73,34 +73,31 @@ const drawRectangle = function() {
     do {
       console.log(valid);
       width = Number(prompt("Width:"));
-      if (width == null) {
+      if (width === null) {
         return;
       }
       height = Number(prompt("Height:"));
-      if (height == null) {
+      if (height === null) {
         return;
       }
       x = Number(prompt("X:"));
-      if (x == null) {
+      if (x === null) {
         return;
       }
       y = Number(prompt("Y:"));
-      if (y == null) {
+      if (y === null) {
         return;
       }
       if (width > 1024 || width < 1) {
         alert("Your width must be between 1 and 1024.")
         valid = false;
-      }
-      if (height > 512 || height < 1) {
+      } else if (height > 512 || height < 1) {
         alert("Your height must be between 1 and 512.")
         valid = false;
-      }
-      if (x > 1024 || x < 1) {
+      } else if (x > 1024 || x < 1) {
         alert("Your x-coordinate must be between 1 and 1024.")
         valid = false;
-      }
-      if (y > 512 || y < 1) {
+      } else if (y > 512 || y < 1) {
         alert("Your y-coordinate must be between 1 and 512.")
         valid = false;
       }
