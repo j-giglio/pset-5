@@ -67,38 +67,62 @@ const drawRectangle = function() {
   let y;
   let height;
   let width;
-  let valid = true
+  let valid = true;
 
   do {
-    width = prompt("Width:");
-    if (width.length > 50) {
-      alert("Your width must be between 1 and 1024.")
-    }
-  } while (width > 1024 || width < 1);
+    do {
+      console.log(valid);
+      width = Number(prompt("Width:"));
+      if (width == null) {
+        return;
+      } else if (width > 1024 || width < 1) {
+        alert("Your width must be between 1 and 1024.")
+        valid = false;
+      }
+    } while (valid == false);
 
-  do {
-    height = prompt("Height:");
-    if (height.length > 50) {
-      alert("Your height must be between 1 and 1024.")
-    }
-  } while (height > 1024 || height < 1);
+    do {
+      height = Number(prompt("Height:"));
+      if (height == null) {
+        return;
+      } else if (height > 512 || height < 1) {
+        alert("Your height must be between 1 and 512.")
+        valid = false;
+      }
+    } while (valid == false);
 
-  do {
-    x = prompt("X:");
-    if (x.length > 50) {
-      alert("Your x-coordinate must be between 1 and 1024.")
-    }
-  } while (x > 1024 || x < 1);
+    do {
+      x = Number(prompt("X:"));
+      if (x == null) {
+        return;
+      } else if (x > 1024 || x < 1) {
+        alert("Your x-coordinate must be between 1 and 1024.")
+        valid = false;
+      }
+    } while (valid == false);
 
-  do {
-    y = prompt("Y:");
-    if (y.length > 50) {
-      alert("Your y-coordinate must be between 1 and 1024.")
+    do {
+      y = Number(prompt("Y:"));
+      if (y == null) {
+        return;
+      } else if (y > 512 || y < 1) {
+        alert("Your y-coordinate must be between 1 and 512.")
+        valid = false;
+      }
+    } while (valid == false);
+
+    console.log(x);
+    console.log(y);
+    console.log(width);
+    console.log(height);
+
+    if (x + width > 1024 || y + height > 512){
+      alert("Your rectangle won't fit on the canvas.")
+      valid = false;
     }
-  } while (y > 1024 || y < 1);
+  } while (valid == false)
 
   ctx.strokeRect(x, y, width, height);
-
 
 };
 
@@ -111,18 +135,23 @@ const drawColoredRectangle = function() {
   const ctx = canvas.getContext("2d");
   ctx.clearRect(0, 0, 1024, 128);
   let color;
+  let valid = true;
 
   do {
-    color = window.prompt("Color:");
-    color = color.toLowerCase;
-    if (color != "green" && color != "black" && color != "blue" && color != "orange" && color != "purple" && color != "red" && color != "yellow")
-    {
-      alert(color + " is not a supported color.")
+    color = prompt("Color:");
+    if (color == null) {
+      return;
     }
-  } while (height.length > 50);
+    color = color.toLowerCase();
+    if (color != "green" && color != "black" && color != "blue" && color != "orange" && color != "purple" && color != "red" && color != "yellow") {
+      alert(color + " is not a supported color.")
+      valid = false;
+    }
+  } while (valid === false);
 
+  console.log(color)
   ctx.fillStyle = color;
-  ctx.strokeRect(10, 10, 100, 50);
+  ctx.fillRect(10, 10, 100, 50);
 };
 
 /*
@@ -143,8 +172,17 @@ const drawTriangle = function() {
 
   do {
     firstSide = Number(prompt("Side 1: "))
+    if (firstSide == null) {
+      return;
+    }
     secondSide = Number(prompt("Side 2: "))
+    if (secondSide == null) {
+      return;
+    }
     thirdSide = Number(prompt("Side 3: "))
+    if (thirdSide == null) {
+      return;
+    }
 
     if (isNaN(firstSide) || isNaN(secondSide) || isNaN(thirdSide)) {
       alert("One of your sides is not a number.")
@@ -203,7 +241,10 @@ const drawFace = function() {
   let valid = true;
 
   do {
-    headRadius = prompt("Radius: ")
+    headRadius = Number(prompt("Radius: "));
+    if (headRadius == null) {
+      return;
+    }
     if (headRadius > 512 / 4) {
       alert("Your smiley face won't fit on the canvas.")
     valid = false;
@@ -218,27 +259,32 @@ const drawFace = function() {
 
   eyeRadius = headRadius * 0.15;
   mouthRadius = headRadius * 0.7;
-  let centerPointX = 1024 / 2
-  let centerPointY = 512 / 2
+  let centerPointX = 1024 / 2;
+  let centerPointY = 512 / 2;
 
   ctx.beginPath
   ctx.arc(centerPointX, centerPointY, headRadius, 0, 2 * Math.PI);
   ctx.stroke();
   ctx.closePath();
+
   ctx.beginPath
   ctx.arc(centerPointX, centerPointY, mouthRadius, 0, Math.PI);
   ctx.stroke();
   ctx.closePath();
+
   centerPointX += headRadius * 0.4;
   centerPointY += headRadius * 0.4;
+
   ctx.beginPath
-  ctx.arc(eyeCenterPointX, eyeCenterPointY, eyeRadius, 0, 2 * Math.PI);
+  ctx.arc(centerPointX, centerPointY, eyeRadius, 0, 2 * Math.PI);
   ctx.stroke();
   ctx.closePath();
+
   centerPointX += headRadius * 0.4;
   centerPointY += headRadius * 0.4;
+
   ctx.beginPath
-  ctx.arc(eyeCenterPointX, eyeCenterPointY, eyeRadius, 0, 2 * Math.PI);
+  ctx.arc(centerPointX, centerPointY, eyeRadius, 0, 2 * Math.PI);
   ctx.stroke();
   ctx.closePath();
 
