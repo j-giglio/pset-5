@@ -46,6 +46,8 @@ const sayHello = function() {
     } else if (input.length > 50) {
       alert("Your message is too long. Keep it under 50 characters")
       valid = false;
+    } else {
+      valid = true;
     }
   } while (valid == false);
 
@@ -100,6 +102,8 @@ const drawRectangle = function() {
       } else if (y > 512 || y < 1) {
         alert("Your y-coordinate must be between 1 and 512.")
         valid = false;
+      } else {
+        valid = true;
       }
     } while (valid == false);
 
@@ -111,6 +115,8 @@ const drawRectangle = function() {
     if (x + width > 1024 || y + height > 512){
       alert("Your rectangle won't fit on the canvas.")
       valid = false;
+    } else {
+      valid = true;
     }
   } while (valid == false)
 
@@ -138,6 +144,8 @@ const drawColoredRectangle = function() {
     if (color != "green" && color != "black" && color != "blue" && color != "orange" && color != "purple" && color != "red" && color != "yellow") {
       alert(color + " is not a supported color.")
       valid = false;
+    } else {
+      valid = true;
     }
   } while (valid === false);
 
@@ -179,14 +187,11 @@ const drawTriangle = function() {
     if (isNaN(firstSide) || isNaN(secondSide) || isNaN(thirdSide)) {
       alert("One of your sides is not a number.")
       valid = false;
-    }
-    if (firstSide > 1024 || secondSide > 1024 || thirdSide > 1024) {
+    } else if (firstSide > 1024 || secondSide > 1024 || thirdSide > 1024) {
       alert("Your triangle won't fit on the canvas.")
       valid = false;
-    }
-    if (firstSide < 1 || secondSide < 1 || thirdSide < 1) {
-      alert("SEE WHAT THIS SHOULD SAY")
-      valid = false;
+    } else {
+      valid = true;
     }
 
     height = Math.min (firstSide, secondSide, thirdSide)
@@ -205,7 +210,7 @@ const drawTriangle = function() {
     if (height**2 + base**2 != hypotenuse**2) {
       alert("That's not a valid right triangle.")
       valid = false;
-    }
+    } else 
   } while (valid == false);
 
   height += 25;
@@ -246,6 +251,8 @@ const drawFace = function() {
     } else if (isNaN(headRadius)) {
       alert("Your radius is not a number.")
       valid = false;
+    } else {
+      valid = true;
     }
   } while (valid == false)
 
