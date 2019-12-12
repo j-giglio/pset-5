@@ -46,7 +46,7 @@ const sayHello = function() {
     } else if (input.length > 50) {
       alert("Your message is too long. Keep it under 50 characters")
       valid = false;
-    } else {
+    } else if (input.length < 50) {
       valid = true;
     }
   } while (valid == false);
