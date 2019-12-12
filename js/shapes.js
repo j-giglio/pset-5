@@ -210,7 +210,9 @@ const drawTriangle = function() {
     if (height**2 + base**2 != hypotenuse**2) {
       alert("That's not a valid right triangle.")
       valid = false;
-    } else 
+    } else {
+      valid = true;
+    }
   } while (valid == false);
 
   height += 25;
