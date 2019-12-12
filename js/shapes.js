@@ -72,7 +72,6 @@ const drawRectangle = function() {
   let valid = true;
 
   do {
-    do {
       console.log(valid);
       width = Number(prompt("Width:"));
       if (width === null) {
@@ -112,7 +111,7 @@ const drawRectangle = function() {
     console.log(width);
     console.log(height);
 
-    if (x + width > 1024 || y + height > 512){
+    if (x + width > 1024 || y + height > 512) {
       alert("Your rectangle won't fit on the canvas.")
       valid = false;
     } else {
@@ -120,7 +119,7 @@ const drawRectangle = function() {
     }
   } while (valid == false)
 
-  if (width != null && height != null && x != null && y != null)
+  if (width != null && height != null && x != null && y != null) {
     ctx.strokeRect(x, y, width, height);
   }
 };
