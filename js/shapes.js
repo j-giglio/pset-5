@@ -265,7 +265,7 @@ const drawFace = function() {
   ctx.closePath();
 
   let eyeCenterPointX = centerPointX + headRadius * 0.4;
-  let eyeCenterPointY = centerPointY + headRadius * 0.4;
+  let eyeCenterPointY = centerPointY - headRadius * 0.4;
 
   ctx.beginPath
   ctx.arc(eyeCenterPointX, eyeCenterPointY, eyeRadius, 0, 2 * Math.PI);
@@ -273,7 +273,6 @@ const drawFace = function() {
   ctx.closePath();
 
   eyeCenterPointX = centerPointX - headRadius * 0.4;
-  eyeCenterPointY = centerPointY - headRadius * 0.4;
 
   ctx.beginPath
   ctx.arc(eyeCenterPointX, eyeCenterPointY, eyeRadius, 0, 2 * Math.PI);
