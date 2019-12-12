@@ -235,7 +235,7 @@ const drawFace = function() {
   do {
     headRadius = Number(prompt("Radius: "));
     if (headRadius === null) {
-      return;
+      break;
     }
       
     if (headRadius > 256) {
