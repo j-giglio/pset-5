@@ -201,7 +201,7 @@ const drawTriangle = function() {
     let firstSideTwo = firstSide;
     let secondSideTwo = secondSide;
     let thirdSideTwo = thirdSide;
-    
+    console.log(firstSideTwo, secondSideTwo, thirdSideTwo);
     if (Math.min (firstSide, secondSide, thirdSide) == firstSide) {
       firstSideTwo = 0
     } else if (Math.min (firstSide, secondSide, thirdSide) == secondSide) {
