@@ -186,15 +186,6 @@ const drawTriangle = function() {
       valid = true;
     };
     
-    if (isNaN(firstSide) || isNaN(secondSide) || isNaN(thirdSide)) {
-      alert("One of your sides is not a number.")
-      valid = false;
-    } else if (firstSide > 999 || secondSide > 999 || thirdSide > 999) {
-      alert("Your triangle won't fit on the canvas.")
-      valid = false;
-    } else {
-      valid = true;
-    };
 //     console.log(firstSide, secondSide, thirdSide);
 //     height = Math.min (firstSide, secondSide, thirdSide);
 
@@ -226,7 +217,15 @@ const drawTriangle = function() {
     height = Math.min (firstSide, secondSide, thirdSide);
     hypotenuse = Math.max (firstSide, secondSide, thirdSide);
     base = Math.sqrt(hypotenuse**2 - height**2)
-    if (Math.hypot(base, height) != hypotenuse) {
+    if (isNaN(firstSide) || isNaN(secondSide) || isNaN(thirdSide)) {
+      alert("One of your sides is not a number.")
+      valid = false;
+    } else if (firstSide > 999 || secondSide > 999 || thirdSide > 999) {
+      alert("Your triangle won't fit on the canvas.")
+      valid = false;
+    } else {
+      valid = true;
+    } else if (Math.hypot(base, height) != hypotenuse) {
       alert("That's not a valid right triangle.");
       valid = false;
     } else {
