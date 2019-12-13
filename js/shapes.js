@@ -243,6 +243,7 @@ const drawFace = function() {
       alert("Your smiley face won't fit on the canvas.")
       valid = false;
     } else if (headRadius < 32 && headRadius != null) {
+      console.log(headRadius)
       alert("Your radius must be at least 32.")
       valid = false;
     } else if (isNaN(headRadius && headRadius != null)) {
