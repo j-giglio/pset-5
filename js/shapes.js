@@ -168,15 +168,15 @@ const drawTriangle = function() {
   do {
     firstSide = Number(prompt("Side 1: "))
     if (firstSide == null) {
-      return;
+      valid = true;
     };
     secondSide = Number(prompt("Side 2: "))
     if (secondSide == null) {
-      return;
+      valid = true;
     };
     thirdSide = Number(prompt("Side 3: "))
     if (thirdSide == null) {
-      return;
+      valid = true;
     };
 
     if (isNaN(firstSide) || isNaN(secondSide) || isNaN(thirdSide)) {
@@ -191,16 +191,20 @@ const drawTriangle = function() {
 
     height = Math.min (firstSide, secondSide, thirdSide);
 
+    let firstSideTwo = firstSide;
+    let secondSideTwo = secondSide;
+    let thirdSideTwo = thirdSide;
+    
     if (Math.min (firstSide, secondSide, thirdSide) == firstSide) {
-      firstSide = 0
+      firstSideTwo = 0
     } else if (Math.min (firstSide, secondSide, thirdSide) == secondSide) {
-      secondSide = 0
+      secondSideTwo = 0
     } else if (Math.min (firstSide, secondSide, thirdSide) == thirdSide) {
-      thirdSide = 0
+      thirdSideTwo = 0
     };
 
-    base = Math.min (firstSide, secondSide, thirdSide);
-    hypotenuse = Math.max(firstSide, secondSide, thirdSide);
+    base = Math.min (firstSideTwo, secondSideTwo, thirdSideTwo);
+    hypotenuse = Math.max(firstSideTwo, secondSideTwo, thirdSideTwo);
 
     if (height**2 + base**2 != hypotenuse**2) {
       alert("That's not a valid right triangle.");
@@ -210,15 +214,17 @@ const drawTriangle = function() {
     };
   } while (valid == false);
 
-  height += 25;
-  base += 25;
+  if (firstSide != null || secondSide != null || thirdSide != null) {
+    height += 25;
+    base += 25;
 
-  ctx.beginPath();
-  ctx.moveTo(25, 25);
-  ctx.lineTo(25, height);
-  ctx.lineTo(base, height)
-  ctx.closePath();
-  ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(25, 25);
+    ctx.lineTo(25, height);
+    ctx.lineTo(base, height)
+    ctx.closePath();
+    ctx.stroke();
+  }
 };
 
 /*
