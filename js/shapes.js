@@ -239,13 +239,13 @@ const drawFace = function() {
       valid = true;
     };
       
-    if (headRadius > 256) {
+    if (headRadius > 256 && headRadius != null) {
       alert("Your smiley face won't fit on the canvas.")
       valid = false;
-    } else if (headRadius < 32) {
+    } else if (headRadius < 32 && headRadius != null) {
       alert("Your radius must be at least 32.")
       valid = false;
-    } else if (isNaN(headRadius)) {
+    } else if (isNaN(headRadius && headRadius != null)) {
       alert("Your radius is not a number.")
       valid = false;
     } else {
