@@ -246,7 +246,7 @@ const drawFace = function() {
       console.log(headRadius)
       alert("Your radius must be at least 32.")
       valid = false;
-    } else if (isNaN(headRadius && headRadius != null)) {
+    } else if (isNaN(headRadius) && headRadius != null) {
       alert("Your radius is not a number.")
       valid = false;
     } else {
