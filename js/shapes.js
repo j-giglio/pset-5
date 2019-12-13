@@ -232,9 +232,10 @@ const drawFace = function() {
   let eyeRadius;
   let mouthRadius;
   let valid = true;
+  let headRadius;
 
   do {
-    let headRadius = prompt("Radius: ");
+    headRadius = prompt("Radius: ");
       
     if (headRadius === null) {
       valid = true;
