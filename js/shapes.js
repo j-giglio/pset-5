@@ -242,9 +242,7 @@ const drawFace = function() {
     } else {
       headRadius = Number(headRadius)
     };
-      
-    console.log(headRadius)
-      
+            
     if (headRadius > 256 && headRadius != null) {
       alert("Your smiley face won't fit on the canvas.")
       valid = false;
@@ -257,11 +255,8 @@ const drawFace = function() {
     } else {
       valid = true;
     };
-    console.log(headRadius)
   } while (valid == false);
-
-  console.log(headRadius)
-  
+    
   if (headRadius != null) {
     eyeRadius = headRadius * 0.15;
     mouthRadius = headRadius * 0.7;
