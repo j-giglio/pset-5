@@ -229,7 +229,7 @@ const drawTriangle = function() {
     ctx.moveTo(25, 25);
     ctx.lineTo(25, height);
     ctx.lineTo(base, height)
-    ctx.closePath();
+    ctx.lineTo(25, 25);
     ctx.stroke();
   }
 };
