@@ -189,40 +189,52 @@ const drawTriangle = function() {
     if (isNaN(firstSide) || isNaN(secondSide) || isNaN(thirdSide)) {
       alert("One of your sides is not a number.")
       valid = false;
-    } else if (firstSide > 1024 || secondSide > 1024 || thirdSide > 1024) {
+    } else if (firstSide > 999 || secondSide > 999 || thirdSide > 999) {
       alert("Your triangle won't fit on the canvas.")
       valid = false;
     } else {
       valid = true;
     };
-    console.log(firstSide, secondSide, thirdSide);
-    height = Math.min (firstSide, secondSide, thirdSide);
+//     console.log(firstSide, secondSide, thirdSide);
+//     height = Math.min (firstSide, secondSide, thirdSide);
 
-    let firstSideTwo = firstSide;
-    let secondSideTwo = secondSide;
-    let thirdSideTwo = thirdSide;
-    console.log(firstSideTwo, secondSideTwo, thirdSideTwo);
-    if (Math.min (firstSide, secondSide, thirdSide) == firstSide) {
-      firstSideTwo = 0
-    } else if (Math.min (firstSide, secondSide, thirdSide) == secondSide) {
-      secondSideTwo = 0
-    } else if (Math.min (firstSide, secondSide, thirdSide) == thirdSide) {
-      thirdSideTwo = 0
-    };
-    console.log(firstSideTwo, secondSideTwo, thirdSideTwo);
-    base = Math.min (firstSideTwo, secondSideTwo, thirdSideTwo);
-    hypotenuse = Math.max(firstSideTwo, secondSideTwo, thirdSideTwo);
-    console.log(height, base, hypotenuse);
+//     let firstSideTwo = firstSide;
+//     let secondSideTwo = secondSide;
+//     let thirdSideTwo = thirdSide;
+//     console.log(firstSideTwo, secondSideTwo, thirdSideTwo);
+//     if (Math.min (firstSide, secondSide, thirdSide) == firstSide) {
+//       firstSideTwo = null;
+//     } else if (Math.min (firstSide, secondSide, thirdSide) == secondSide) {
+//       secondSideTwo = null;
+//     } else if (Math.min (firstSide, secondSide, thirdSide) == thirdSide) {
+//       thirdSideTwo = null;
+//     };
+//     console.log(firstSideTwo, secondSideTwo, thirdSideTwo);
+//     base = Math.min (firstSideTwo, secondSideTwo, thirdSideTwo);
+//     hypotenuse = Math.max(firstSideTwo, secondSideTwo, thirdSideTwo);
+//     console.log(height, base, hypotenuse);
+//     if (Math.hypot(base, height) != hypotenuse) {
+//       alert("That's not a valid right triangle.");
+//       valid = false;
+//     } else {
+//       valid = true;
+//     };
+//   } while (valid == false);
+
+//   console.log(firstSide, secondSide, thirdSide);
+//   console.log(height, base, hypotenuse);
+    height = Math.min (firstSide, secondSide, thirdSide);
+    hypotenuse = Math.max (firstSide, secondSide, thirdSide);
+    base = Math.sqrt(hypotenuse**2 - height**2)
     if (Math.hypot(base, height) != hypotenuse) {
       alert("That's not a valid right triangle.");
       valid = false;
     } else {
       valid = true;
     };
+  
   } while (valid == false);
-
-  console.log(firstSide, secondSide, thirdSide);
-  console.log(height, base, hypotenuse);
+      
   if (firstSide != null || secondSide != null || thirdSide != null) {
     height += 25;
     base += 25;
