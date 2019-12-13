@@ -223,8 +223,6 @@ const drawTriangle = function() {
     } else if (firstSide > 999 || secondSide > 999 || thirdSide > 999) {
       alert("Your triangle won't fit on the canvas.")
       valid = false;
-    } else {
-      valid = true;
     } else if (Math.hypot(base, height) != hypotenuse) {
       alert("That's not a valid right triangle.");
       valid = false;
