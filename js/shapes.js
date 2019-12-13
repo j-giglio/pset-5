@@ -72,43 +72,37 @@ const drawRectangle = function() {
   let valid = true;
 
   do {
-      console.log(valid);
-      width = Number(prompt("Width:"));
-      if (width === null) {
-        valid = true;
-      }
-      height = Number(prompt("Height:"));
-      if (height === null) {
-        valid = true;
-      }
-      x = Number(prompt("X:"));
-      if (x === null) {
-        valid = true;
-      }
-      y = Number(prompt("Y:"));
-      if (y === null) {
-        valid = true;
-      } else if (width > 1024 || width < 1) {
-        alert("Your width must be between 1 and 1024.")
-        valid = false;
-      } else if (height > 512 || height < 1) {
-        alert("Your height must be between 1 and 512.")
-        valid = false;
-      } else if (x > 1024 || x < 1) {
-        alert("Your x-coordinate must be between 1 and 1024.")
-        valid = false;
-      } else if (y > 512 || y < 1) {
-        alert("Your y-coordinate must be between 1 and 512.")
-        valid = false;
-      } else {
-        valid = true;
-      };
-    } while (valid == false);
-
-    console.log(x);
-    console.log(y);
-    console.log(width);
-    console.log(height);
+    console.log(valid);
+    width = Number(prompt("Width:"));
+    if (width === null) {
+      valid = true;
+    }
+    height = Number(prompt("Height:"));
+    if (height === null) {
+      valid = true;
+    }
+    x = Number(prompt("X:"));
+    if (x === null) {
+      valid = true;
+    }
+    y = Number(prompt("Y:"));
+    if (y === null) {
+      valid = true;
+    } else if (width > 1024 || width < 1) {
+      alert("Your width must be between 1 and 1024.")
+      valid = false;
+    } else if (height > 512 || height < 1) {
+      alert("Your height must be between 1 and 512.")
+      valid = false;
+    } else if (x > 1024 || x < 1) {
+      alert("Your x-coordinate must be between 1 and 1024.")
+      valid = false;
+    } else if (y > 512 || y < 1) {
+      alert("Your y-coordinate must be between 1 and 512.")
+      valid = false;
+    } else {
+      valid = true;
+    };
 
     if (x + width > 1024 || y + height > 512) {
       alert("Your rectangle won't fit on the canvas.")
