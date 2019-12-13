@@ -234,9 +234,12 @@ const drawFace = function() {
   let valid = true;
 
   do {
-    var headRadius = Number(prompt("Radius: "));
+    let headRadius = prompt("Radius: ");
+      
     if (headRadius === null) {
       valid = true;
+    } else {
+      headRadius = Number(headRadius)
     };
       
     if (headRadius > 256 && headRadius != null) {
