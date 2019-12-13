@@ -217,10 +217,11 @@ const drawTriangle = function() {
     height = Math.min (firstSide, secondSide, thirdSide);
     hypotenuse = Math.max (firstSide, secondSide, thirdSide);
     base = Math.sqrt(hypotenuse**2 - height**2)
+    
     if (isNaN(firstSide) || isNaN(secondSide) || isNaN(thirdSide)) {
       alert("One of your sides is not a number.")
       valid = false;
-    } else if (firstSide > 999 || secondSide > 999 || thirdSide > 999) {
+    } else if (height > 999 || base > 487) {
       alert("Your triangle won't fit on the canvas.")
       valid = false;
     } else if (Math.hypot(base, height) != hypotenuse) {
