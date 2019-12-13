@@ -209,7 +209,7 @@ const drawTriangle = function() {
     } else if (Math.min (firstSide, secondSide, thirdSide) == thirdSide) {
       thirdSideTwo = 0
     };
-
+    console.log(firstSideTwo, secondSideTwo, thirdSideTwo);
     base = Math.min (firstSideTwo, secondSideTwo, thirdSideTwo);
     hypotenuse = Math.max(firstSideTwo, secondSideTwo, thirdSideTwo);
     console.log(height, base, hypotenuse);
