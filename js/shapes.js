@@ -72,23 +72,34 @@ const drawRectangle = function() {
   let valid = true;
 
   do {
-    console.log(valid);
-    width = Number(prompt("Width:"));
+    width = prompt("Width:");
     if (width == null) {
       valid = true;
+    } else {
+      width = Number(width);
     }
-    height = Number(prompt("Height:"));
+      
+    height = prompt("Height:");
     if (height == null) {
       valid = true;
+    } else {
+      height = Number(height);
     }
-    x = Number(prompt("X:"));
+      
+    x = prompt("X:");
     if (x == null) {
       valid = true;
+    } else {
+      x = Number(x);
     }
-    y = Number(prompt("Y:"));
+      
+    y = prompt("Y:");
     if (y == null) {
       valid = true;
+    } else {
+      y = Number(y);
     }
+      
     if (width > 1024 || width < 1 && width != null && height != null && x != null && y != null) {
       alert("Your width must be between 1 and 1024.")
       valid = false;
@@ -103,11 +114,7 @@ const drawRectangle = function() {
       valid = false;
     } else if (isNaN(width) || isNaN(height) || isNaN(x) || isNaN(y)) {
       alert("One of your values is not a number.")
-    } else {
-      valid = true;
-    };
-
-    if (x + width > 1024 || y + height > 512 && width != null && height != null && x != null && y != null) {
+    } else if (x + width > 1024 || y + height > 512 && width != null && height != null && x != null && y != null) {
       alert("Your rectangle won't fit on the canvas.")
       valid = false;
     } else {
@@ -206,7 +213,7 @@ const drawTriangle = function() {
     base = Math.min (firstSideTwo, secondSideTwo, thirdSideTwo);
     hypotenuse = Math.max(firstSideTwo, secondSideTwo, thirdSideTwo);
 
-    if (height**2 + base**2 != hypotenuse**2) {
+    if (Math.hypot(base, height) != hypotenuse) {
       alert("That's not a valid right triangle.");
       valid = false;
     } else {
