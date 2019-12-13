@@ -116,8 +116,8 @@ const drawRectangle = function() {
       valid = false;
     } else {
       valid = true;
-    }
-  } while (valid == false)
+    };
+  } while (valid == false);
 
   if (width != null && height != null && x != null && y != null) {
     ctx.strokeRect(x, y, width, height);
@@ -146,7 +146,7 @@ const drawColoredRectangle = function() {
       valid = false;
     } else {
       valid = true;
-    }
+    };
   } while (valid === false);
 
   ctx.fillStyle = color;
@@ -173,15 +173,15 @@ const drawTriangle = function() {
     firstSide = Number(prompt("Side 1: "))
     if (firstSide == null) {
       return;
-    }
+    };
     secondSide = Number(prompt("Side 2: "))
     if (secondSide == null) {
       return;
-    }
+    };
     thirdSide = Number(prompt("Side 3: "))
     if (thirdSide == null) {
       return;
-    }
+    };
 
     if (isNaN(firstSide) || isNaN(secondSide) || isNaN(thirdSide)) {
       alert("One of your sides is not a number.")
@@ -191,9 +191,9 @@ const drawTriangle = function() {
       valid = false;
     } else {
       valid = true;
-    }
+    };
 
-    height = Math.min (firstSide, secondSide, thirdSide)
+    height = Math.min (firstSide, secondSide, thirdSide);
 
     if (Math.min (firstSide, secondSide, thirdSide) = firstSide) {
       firstSide = 0
@@ -201,17 +201,17 @@ const drawTriangle = function() {
       secondSide = 0
     } else if (Math.min (firstSide, secondSide, thirdSide) = thirdSide) {
       thirdSide = 0
-    }
+    };
 
     base = Math.min (firstSide, secondSide, thirdSide);
     hypotenuse = Math.max(firstSide, secondSide, thirdSide);
 
     if (height**2 + base**2 != hypotenuse**2) {
-      alert("That's not a valid right triangle.")
+      alert("That's not a valid right triangle.");
       valid = false;
     } else {
       valid = true;
-    }
+    };
   } while (valid == false);
 
   height += 25;
@@ -241,7 +241,7 @@ const drawFace = function() {
     var headRadius = Number(prompt("Radius: "));
     if (headRadius === null) {
       valid = true;
-    }
+    };
       
     if (headRadius > 256) {
       alert("Your smiley face won't fit on the canvas.")
@@ -254,8 +254,8 @@ const drawFace = function() {
       valid = false;
     } else {
       valid = true;
-    }
-  } while (valid == false)
+    };
+  } while (valid == false);
 
   if (headRadius != null) {
     eyeRadius = headRadius * 0.15;
