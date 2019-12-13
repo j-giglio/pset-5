@@ -74,37 +74,40 @@ const drawRectangle = function() {
   do {
     console.log(valid);
     width = Number(prompt("Width:"));
-    if (width === null) {
+    if (width == null) {
       valid = true;
     }
     height = Number(prompt("Height:"));
-    if (height === null) {
+    if (height == null) {
       valid = true;
     }
     x = Number(prompt("X:"));
-    if (x === null) {
+    if (x == null) {
       valid = true;
     }
     y = Number(prompt("Y:"));
-    if (y === null) {
+    if (y == null) {
       valid = true;
-    } else if (width > 1024 || width < 1) {
+    }
+    if (width > 1024 || width < 1 && width != null && height != null && x != null && y != null) {
       alert("Your width must be between 1 and 1024.")
       valid = false;
-    } else if (height > 512 || height < 1) {
+    } else if (height > 512 || height < 1 && width != null && height != null && x != null && y != null) {
       alert("Your height must be between 1 and 512.")
       valid = false;
-    } else if (x > 1024 || x < 1) {
+    } else if (x > 1024 || x < 1 && width != null && height != null && x != null && y != null) {
       alert("Your x-coordinate must be between 1 and 1024.")
       valid = false;
-    } else if (y > 512 || y < 1) {
+    } else if (y > 512 || y < 1 && width != null && height != null && x != null && y != null) {
       alert("Your y-coordinate must be between 1 and 512.")
       valid = false;
+    } else if (isNaN(width) || isNaN(height) || isNaN(x) || isNaN(y)) {
+      alert("One of your values is not a number.")
     } else {
       valid = true;
     };
 
-    if (x + width > 1024 || y + height > 512) {
+    if (x + width > 1024 || y + height > 512 && width != null && height != null && x != null && y != null) {
       alert("Your rectangle won't fit on the canvas.")
       valid = false;
     } else {
@@ -188,11 +191,11 @@ const drawTriangle = function() {
 
     height = Math.min (firstSide, secondSide, thirdSide);
 
-    if (Math.min (firstSide, secondSide, thirdSide) = firstSide) {
+    if (Math.min (firstSide, secondSide, thirdSide) == firstSide) {
       firstSide = 0
-    } else if (Math.min (firstSide, secondSide, thirdSide) = secondSide) {
+    } else if (Math.min (firstSide, secondSide, thirdSide) == secondSide) {
       secondSide = 0
-    } else if (Math.min (firstSide, secondSide, thirdSide) = thirdSide) {
+    } else if (Math.min (firstSide, secondSide, thirdSide) == thirdSide) {
       thirdSide = 0
     };
 
