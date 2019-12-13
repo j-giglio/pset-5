@@ -185,7 +185,7 @@ const drawTriangle = function() {
     if (thirdSide == null) {
       valid = true;
     };
-
+    
     if (isNaN(firstSide) || isNaN(secondSide) || isNaN(thirdSide)) {
       alert("One of your sides is not a number.")
       valid = false;
@@ -195,7 +195,7 @@ const drawTriangle = function() {
     } else {
       valid = true;
     };
-
+    console.log(firstSide, secondSide, thirdSide);
     height = Math.min (firstSide, secondSide, thirdSide);
 
     let firstSideTwo = firstSide;
@@ -212,7 +212,7 @@ const drawTriangle = function() {
 
     base = Math.min (firstSideTwo, secondSideTwo, thirdSideTwo);
     hypotenuse = Math.max(firstSideTwo, secondSideTwo, thirdSideTwo);
-
+    console.log(height, base, hypotenuse);
     if (Math.hypot(base, height) != hypotenuse) {
       alert("That's not a valid right triangle.");
       valid = false;
@@ -221,6 +221,8 @@ const drawTriangle = function() {
     };
   } while (valid == false);
 
+  console.log(firstSide, secondSide, thirdSide);
+  console.log(height, base, hypotenuse);
   if (firstSide != null || secondSide != null || thirdSide != null) {
     height += 25;
     base += 25;
