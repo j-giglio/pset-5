@@ -88,8 +88,7 @@ const drawRectangle = function() {
       y = Number(prompt("Y:"));
       if (y === null) {
         valid = true;
-      }
-      if (width > 1024 || width < 1) {
+      } else if (width > 1024 || width < 1) {
         alert("Your width must be between 1 and 1024.")
         valid = false;
       } else if (height > 512 || height < 1) {
@@ -103,7 +102,7 @@ const drawRectangle = function() {
         valid = false;
       } else {
         valid = true;
-      }
+      };
     } while (valid == false);
 
     console.log(x);
