@@ -78,28 +78,28 @@ const drawRectangle = function() {
     } else {
       width = Number(width);
     }
-      
+
     height = prompt("Height:");
     if (height == null) {
       valid = true;
     } else {
       height = Number(height);
     }
-      
+
     x = prompt("X:");
     if (x == null) {
       valid = true;
     } else {
       x = Number(x);
     }
-      
+
     y = prompt("Y:");
     if (y == null) {
       valid = true;
     } else {
       y = Number(y);
     }
-      
+
     if (width > 1024 || width < 1 && width != null && height != null && x != null && y != null) {
       alert("Your width must be between 1 and 1024.")
       valid = false;
@@ -174,18 +174,18 @@ const drawTriangle = function() {
 
   do {
     firstSide = Number(prompt("Side 1: "))
-    if (firstSide == null) {
-      valid = true;
+    if (firstSide == 0) {
+      return;
     };
     secondSide = Number(prompt("Side 2: "))
-    if (secondSide == null) {
-      valid = true;
+    if (secondSide == 0) {
+      return;
     };
     thirdSide = Number(prompt("Side 3: "))
-    if (thirdSide == null) {
-      valid = true;
+    if (thirdSide == 0) {
+      return;
     };
-    
+
 //     console.log(firstSide, secondSide, thirdSide);
 //     height = Math.min (firstSide, secondSide, thirdSide);
 
@@ -217,7 +217,7 @@ const drawTriangle = function() {
     height = Math.min (firstSide, secondSide, thirdSide);
     hypotenuse = Math.max (firstSide, secondSide, thirdSide);
     base = Math.sqrt(hypotenuse**2 - height**2)
-    
+
     if (isNaN(firstSide) || isNaN(secondSide) || isNaN(thirdSide)) {
       alert("One of your sides is not a number.")
       valid = false;
@@ -230,9 +230,9 @@ const drawTriangle = function() {
     } else {
       valid = true;
     };
-  
+
   } while (valid == false);
-      
+console.log(firstSide + "  " + secondSide + "  " + thirdSide)
   if (firstSide != null || secondSide != null || thirdSide != null) {
     height += 25;
     base += 25;
@@ -261,13 +261,13 @@ const drawFace = function() {
 
   do {
     headRadius = prompt("Radius: ");
-      
+
     if (headRadius === null) {
       valid = true;
     } else {
       headRadius = Number(headRadius)
     };
-            
+
     if (headRadius > 256 && headRadius != null) {
       alert("Your smiley face won't fit on the canvas.")
       valid = false;
@@ -281,7 +281,7 @@ const drawFace = function() {
       valid = true;
     };
   } while (valid == false);
-    
+
   if (headRadius != null) {
     eyeRadius = headRadius * 0.15;
     mouthRadius = headRadius * 0.7;
